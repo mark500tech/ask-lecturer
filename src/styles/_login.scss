@@ -1,0 +1,51 @@
+.login {
+  .box {
+    width: 300px;
+    min-height: 360px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 100px auto;
+    -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.20);
+    -moz-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.20);
+    box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.20);
+    text-align: center;
+    padding: 40px 40px 40px;
+    box-sizing: border-box;
+
+    @media only screen and(max-width: 480px) {
+      width: calc(100% - 20px);
+      margin: 40px 10px;
+    }
+  }
+
+  .clickable-text {
+    font-size: 12px;
+    text-align: left;
+
+    span {
+      margin-left: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      color: #1594e2;
+
+      &:hover {
+        color: #444;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .inputs {
+    margin-top: 40px;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px;
+  }
+}

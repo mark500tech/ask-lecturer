@@ -1,0 +1,69 @@
+.spinner-page {
+  // Here is where the magic happensspinner
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1f2f7;
+
+  $offset: 187;
+  $duration: 1.4s;
+
+  .spinner {
+    animation: rotator $duration linear infinite;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+  }
+
+  @keyframes rotator {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  .path {
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash $duration ease-in-out infinite,
+    colors ($duration*4) ease-in-out infinite;
+  }
+
+  @keyframes colors {
+    0% {
+      stroke: #4f007f;
+    }
+    25% {
+      stroke: #8c00dd;
+    }
+    50% {
+      stroke: blue;
+    }
+    75% {
+      stroke: #8c00dd;
+    }
+    100% {
+      stroke: #4f007f;
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: $offset;
+    }
+    50% {
+      stroke-dashoffset: $offset/4;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: $offset;
+      transform: rotate(450deg);
+    }
+  }
+}
+
